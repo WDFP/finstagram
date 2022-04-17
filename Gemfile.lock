@@ -1,4 +1,4 @@
-git pGEM
+GEM
   remote: https://rubygems.org/
   specs:
     activemodel (4.2.11.3)
