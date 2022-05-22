@@ -82,6 +82,12 @@ get '/finstagram_posts/:id' do
   erb(:"finstagram_posts/show")               # render app/views/finstagram_posts/show.erb
 end
 
+delete '/finstagram_posts/:id' do
+  finstagram_post = FinstagramPost.find(params[:id])
+  finstagram_post.destroy
+  redirect to('/')
+end
+
 post '/comments' do
    # point values from params to variables
    text = params[:text]

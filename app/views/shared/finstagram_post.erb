@@ -1,4 +1,4 @@
-<main>
+
 <article class="finstagram-post">
   <div class="user-info">
     <img src="<%= finstagram_post.user.avatar_url %>" alt="<%= finstagram_post.user.username %>">
@@ -8,6 +8,10 @@
   <a class="photo" href="/finstagram_posts/<%= finstagram_post.id %>">
   <img src="<%= finstagram_post.photo_url%>" alt="finstagram_post from <%= finstagram_post.user.username %>">
 </a>
+<form action="/finstagram_posts/<%= finstagram_post.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="button">delete</button>
+</form>
 <div class="actions">
   <%= erb(:"shared/likes", { locals: { finstagram_post: finstagram_post }}) %>
   <span class="comment-count"><%= finstagram_post.comment_count %> comments</span>
@@ -26,4 +30,3 @@
     <% end %>
   </ul>
 </article>
-</main>
